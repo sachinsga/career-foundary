@@ -91,7 +91,7 @@ object StandardDeviation {
     try {
       resultSet = statement.executeQuery(
         "SELECT count(1) "
-          + "FROM btc_stddev_daily "
+          + s"FROM ${tableName} "
       )
       resultSet.next()
       val count = resultSet.getInt(1)
@@ -104,9 +104,9 @@ object StandardDeviation {
     }
     println(s"tableExist=${tableExist}")
     if (!tableExist) {
-      val createQuery = "CREATE TABLE `btc_stddev_daily` (" +
-        "`day` date ," +
-        "`stddev` double" +
+      val createQuery = s"CREATE TABLE ${tableName} (" +
+        "day date ," +
+        "stddev double" +
         ")"
       statement.executeUpdate(createQuery)
     }
