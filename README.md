@@ -4,7 +4,7 @@ Maven
 Jdk 8
 ```
 
-# Below steps needs to be followed for executing spark application
+# Below steps needs to be followed for executing the standard deviation spark application
 
 ## clone the repository
 git clone https://github.com/sachinsga/career-foundary.git
